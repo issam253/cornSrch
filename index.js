@@ -27,7 +27,8 @@ app.get('/kshitiz', async (req, res) => {
     };
 
     const response = await axios.request(options);
-    const links = response.data.result.map(item => item.link);
+    console.log(response.data); 
+    const links = response.data?.result?.map(item => item.link) || []; 
 
     res.json({ links });
   } catch (error) {
