@@ -20,7 +20,7 @@ app.get('/kshitiz', async (req, res) => {
       url: 'https://all-media-downloader1.p.rapidapi.com/xnxx_search',
       headers: {
         'content-type': 'application/json',
-        'X-RapidAPI-Key': 'b38444b5b7mshc6ce6bcd5c9e446p154fa1jsn7bbcfb025b3b',
+        'X-RapidAPI-Key': '0820ec24afmsh10d1bef860c3651p10e3f6jsn715a93754ace',
         'X-RapidAPI-Host': 'all-media-downloader1.p.rapidapi.com'
       },
       data: { queryXNXX: query }
