@@ -4,9 +4,7 @@ const axios = require('axios');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
 app.use(express.json());
-
 
 app.get('/kshitiz', async (req, res) => {
   try {
@@ -15,18 +13,9 @@ app.get('/kshitiz', async (req, res) => {
       return res.status(400).json({ error: 'Query parameter "q" is required.' });
     }
 
-    const options = {
-      method: 'POST',
-      url: 'https://all-media-downloader1.p.rapidapi.com/xnxx_search',
-      headers: {
-        'content-type': 'application/json',
-        'X-RapidAPI-Key': '0820ec24afmsh10d1bef860c3651p10e3f6jsn715a93754ace',
-        'X-RapidAPI-Host': 'all-media-downloader1.p.rapidapi.com'
-      },
-      data: { queryXNXX: query }
-    };
+    const url = `https://tools.betabotz.eu.org/tools/xnxxsearch?q=${encodeURIComponent(query)}`;
+    const response = await axios.get(url);
 
-    const response = await axios.request(options);
     console.log(response.data); 
     const links = response.data?.result?.map(item => item.link) || []; 
 
@@ -36,7 +25,6 @@ app.get('/kshitiz', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
