@@ -17,9 +17,9 @@ app.get('/xn', async (req, res) => {
     const response = await axios.get(url);
 
     console.log(response.data); 
-    const links = response.data?.result || []; 
+  
 
-    res.json({ links });
+    res.json({ response.data?.result });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
