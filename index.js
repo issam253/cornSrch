@@ -17,7 +17,7 @@ app.get('/xn', async (req, res) => {
     const response = await axios.get(url);
 
     console.log(response.data); 
-    const links = response.data?.result?.map(item => item.link) || []; 
+    const links = response.data?.result || []; 
 
     res.json({ links });
   } catch (error) {
