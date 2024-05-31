@@ -19,7 +19,7 @@ app.get('/xn', async (req, res) => {
     console.log(response.data); 
   
 
-    res.json({ response.data?.result });
+    res.json(response.data);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
