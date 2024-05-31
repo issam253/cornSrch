@@ -6,11 +6,11 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.get('/kshitiz', async (req, res) => {
+app.get('/xn', async (req, res) => {
   try {
     const query = req.query.q;
     if (!query) {
-      return res.status(400).json({ error: 'Query parameter "q" is required.' });
+      return res.status(400).json({ error: 'مالذي تريد البحث عنه امممم.' });
     }
 
     const url = `https://tools.betabotz.eu.org/tools/xnxxsearch?q=${encodeURIComponent(query)}`;
