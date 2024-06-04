@@ -16,7 +16,7 @@ app.get('/xn', async (req, res) => {
     const url = `https://tools.betabotz.eu.org/tools/xnxxsearch?q=${encodeURIComponent(query)}`;
     const response = await axios.get(url);
 
-    console.log(response.data); 
+    console.log(response.data.result); 
   
 
     res.json(response.data);
